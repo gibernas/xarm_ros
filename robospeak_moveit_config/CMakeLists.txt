@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(xarm6_speaker_moveit_config)
+project(robospeak_moveit_config)
 
 find_package(catkin REQUIRED)
 

@@ -1,6 +1,6 @@
 ## xarm_description
-
-​   This is the description package for xarm
+ 
+This is the description package for xarm
 
 ### Unit test
 

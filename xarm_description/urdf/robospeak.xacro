@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="xarm6_with_gripper">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="robospeak">
   <xacro:arg name="prefix" default=""/>
   <xacro:arg name="ros_namespace" default="xarm"/>
   <xacro:arg name="limited" default="false"/>
@@ -12,5 +12,5 @@
   <xacro:include filename="$(find speaker)/urdf/speaker_model.xacro" />
 
   <xacro:xarm6_robot prefix="$(arg prefix)" namespace="$(arg ros_namespace)" limited="$(arg limited)" effort_control="$(arg effort_control)"/>
-  <xacro:load_gripper attach_to="$(arg prefix)link_eef" />
+  <xacro:load_speaker attach_to="$(arg prefix)link_eef" />
 </robot>

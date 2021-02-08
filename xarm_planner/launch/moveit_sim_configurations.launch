@@ -4,6 +4,8 @@
 
   <rosparam file="$(find robospeak_moveit_config)/config/robospeak_params.yaml" command="load"/>
   <include file="$(find robospeak_moveit_config)/launch/moveit_rviz_common.launch">
+<!--  <rosparam file="$(find xarm6_moveit_config)/config/xarm6_params.yaml" command="load"/>-->
+<!--  <include file="$(find xarm6_moveit_config)/launch/moveit_rviz_common.launch">-->
     <arg name="jnt_stat_source" value="[/move_group/fake_controller_joint_states]" />
     <!-- whether to use fake_execution controller to drive the motion -->
     <arg name="fake_execution" value="true" />

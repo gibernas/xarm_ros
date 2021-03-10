@@ -23,6 +23,8 @@
   <arg name="NO_GUI_CTRL" default="false"/>
   <!-- option to show rviz or not -->
   <arg name="show_rviz" default="true" />
+  <!-- simulation -->
+  <arg name="simulation" default="false"/>
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server, limit joint range within [-pi, pi] -->
   <include file="$(find robospeak_moveit_config)/launch/planning_context.launch">
@@ -32,10 +34,12 @@
   <!-- If needed, broadcast static tf for robot root -->
 
   <!-- publish /joint_states from specified source topic -->
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="/use_gui" value="$(arg use_gui)"/>
-    <rosparam param="/source_list" subst_value="True">$(arg jnt_stat_source)</rosparam>
-  </node>
+  <group unless="$(arg simulation)">
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+      <param name="/use_gui" value="$(arg use_gui)"/>
+      <rosparam param="/source_list" subst_value="True">$(arg jnt_stat_source)</rosparam>
+    </node>
+  </group>
 
   <!-- Given the published joint states, publish tf for the robot links -->
   <node if="$(arg pub_tf)" name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />

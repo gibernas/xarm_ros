@@ -22,6 +22,7 @@
     pkg="controller_manager"
     type="spawner"
     respawn="false"
+    ns="robospeak_1"
     output="screen"
     args="xarm6_traj_controller"/>
 

@@ -2,7 +2,7 @@
 
   <arg name="run_demo_traj" default="false"/>
   <arg name="effort_control" default="false"/>
-  <arg name="namespace" default="robospeak"/>
+  <arg name="namespace" default="robospeak_1"/>
   <arg name="add_gripper" default="false" />
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
@@ -14,7 +14,7 @@
     type="controller_manager"
     respawn="false"
     output="screen"
-    ns="/$(arg namespace)"
+    ns="/robochair_1"
     args="spawn xarm6_traj_controller joint_state_controller"/>
 
   <!-- run_demo: load the position controllers -->
